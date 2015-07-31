@@ -1,5 +1,23 @@
 .. _hello_world:
 
+***********
+DEPRECATED
+***********
+
+As of Cyclus 1.3.1+, Cycstub is deprecated. Upon the next release, the cycstub
+repository will be removed from Github.
+
+Instead of an explicit Cycstub repositories, stubs can be generated from the
+``cycstub`` CLI:
+
+.. code-block:: bash
+
+    $ cycstub -h
+
+.. code-block:: bash
+
+    $ cycstub --type facility mypath:mylib:MyFacility
+
 Hello, Cyclus!
 ==============
 This pages walks you through a very simple hello world example using
