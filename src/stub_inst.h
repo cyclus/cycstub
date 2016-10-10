@@ -1,18 +1,18 @@
-#ifndef CYCLUS_SHORTTERMSTORAGES_SHORTTERMSTORAGE_INST_H_
-#define CYCLUS_SHORTTERMSTORAGES_SHORTTERMSTORAGE_INST_H_
+#ifndef CYCLUS_STUBS_STUB_INST_H_
+#define CYCLUS_STUBS_STUB_INST_H_
 
 #include <string>
 
 #include "cyclus.h"
 
-namespace shorttermstorage {
+namespace stubs {
 
-/// @class ShorttermstorageInst
+/// @class StubInst
 ///
 /// This Institution is intended as a skeleton to guide the implementation of
 /// new Institution agents.
 ///
-/// The ShorttermstorageInst class inherits from the Institution class and is dynamically
+/// The StubInst class inherits from the Institution class and is dynamically
 /// loaded by the Agent class when requested.
 ///
 /// @section intro Introduction
@@ -30,14 +30,14 @@ namespace shorttermstorage {
 /// Place a description of the detailed behavior of the agent. Consider
 /// describing the behavior at the tick and tock as well as the behavior
 /// upon sending and receiving materials and messages.
-class ShorttermstorageInst : public cyclus::Institution {
+class StubInst : public cyclus::Institution {
  public:
-  /// Constructor for ShorttermstorageInst Class
+  /// Constructor for StubInst Class
   /// @param ctx the cyclus context for access to simulation-wide parameters
-  explicit  ShorttermstorageInst(cyclus::Context* ctx);
+  explicit  StubInst(cyclus::Context* ctx);
 
   /// Every agent should be destructable
-  virtual ~ShorttermstorageInst();
+  virtual ~StubInst();
 
   /// The Prime Directive
   /// Generates code that handles all input file reading and restart operations
@@ -47,7 +47,7 @@ class ShorttermstorageInst : public cyclus::Institution {
 
   #pragma cyclus
 
-  #pragma cyclus note {"doc": "A shorttermstorage institution is provided as a " \
+  #pragma cyclus note {"doc": "A stub institution is provided as a " \
                               "skeleton for the design of new " \
                               "institution agents."}
 
@@ -57,6 +57,6 @@ class ShorttermstorageInst : public cyclus::Institution {
   // And away we go!
 };
 
-}  // namespace shorttermstorage
+}  // namespace stubs
 
-#endif  // CYCLUS_SHORTTERMSTORAGES_SHORTTERMSTORAGE_INST_H_
+#endif  // CYCLUS_STUBS_STUB_INST_H_
