@@ -1,21 +1,21 @@
 #include <gtest/gtest.h>
 
-#include "stub_facility.h"
+#include "shorttermstorage_facility.h"
 
 #include "agent_tests.h"
 #include "context.h"
 #include "facility_tests.h"
 
-using stubs::StubFacility;
+using shorttermstorage::ShorttermstorageFacility;
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-class StubFacilityTest : public ::testing::Test {
+class ShorttermstorageFacilityTest : public ::testing::Test {
  protected:
   cyclus::TestContext tc;
-  StubFacility* facility;
+  ShorttermstorageFacility* facility;
 
   virtual void SetUp() {
-    facility = new StubFacility(tc.get());
+    facility = new ShorttermstorageFacility(tc.get());
   }
 
   virtual void TearDown() {
@@ -24,33 +24,33 @@ class StubFacilityTest : public ::testing::Test {
 };
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-TEST_F(StubFacilityTest, InitialState) {
+TEST_F(ShorttermstorageFacilityTest, InitialState) {
   // Test things about the initial state of the facility here
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-TEST_F(StubFacilityTest, Print) {
+TEST_F(ShorttermstorageFacilityTest, Print) {
   EXPECT_NO_THROW(std::string s = facility->str());
-  // Test StubFacility specific aspects of the print method here
+  // Test ShorttermstorageFacility specific aspects of the print method here
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-TEST_F(StubFacilityTest, Tick) {
+TEST_F(ShorttermstorageFacilityTest, Tick) {
   ASSERT_NO_THROW(facility->Tick());
-  // Test StubFacility specific behaviors of the Tick function here
+  // Test ShorttermstorageFacility specific behaviors of the Tick function here
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-TEST_F(StubFacilityTest, Tock) {
+TEST_F(ShorttermstorageFacilityTest, Tock) {
   EXPECT_NO_THROW(facility->Tock());
-  // Test StubFacility specific behaviors of the Tock function here
+  // Test ShorttermstorageFacility specific behaviors of the Tock function here
 }
 
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Do Not Touch! Below section required for connection with Cyclus
-cyclus::Agent* StubFacilityConstructor(cyclus::Context* ctx) {
-  return new StubFacility(ctx);
+cyclus::Agent* ShorttermstorageFacilityConstructor(cyclus::Context* ctx) {
+  return new ShorttermstorageFacility(ctx);
 }
 // Required to get functionality in cyclus agent unit tests library
 #ifndef CYCLUS_AGENT_TESTS_CONNECTED
@@ -58,8 +58,8 @@ int ConnectAgentTests();
 static int cyclus_agent_tests_connected = ConnectAgentTests();
 #define CYCLUS_AGENT_TESTS_CONNECTED cyclus_agent_tests_connected
 #endif  // CYCLUS_AGENT_TESTS_CONNECTED
-INSTANTIATE_TEST_CASE_P(StubFac, FacilityTests,
-                        ::testing::Values(&StubFacilityConstructor));
-INSTANTIATE_TEST_CASE_P(StubFac, AgentTests,
-                        ::testing::Values(&StubFacilityConstructor));
+INSTANTIATE_TEST_CASE_P(ShorttermstorageFac, FacilityTests,
+                        ::testing::Values(&ShorttermstorageFacilityConstructor));
+INSTANTIATE_TEST_CASE_P(ShorttermstorageFac, AgentTests,
+                        ::testing::Values(&ShorttermstorageFacilityConstructor));
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

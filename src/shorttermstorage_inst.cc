@@ -1,21 +1,21 @@
-#include "stub_inst.h"
+#include "shorttermstorage_inst.h"
 
-using stubs::StubInst;
-
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-StubInst::StubInst(cyclus::Context* ctx) : cyclus::Institution(ctx) {}
+using shorttermstorage::ShorttermstorageInst;
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-StubInst::~StubInst() {}
+ShorttermstorageInst::ShorttermstorageInst(cyclus::Context* ctx) : cyclus::Institution(ctx) {}
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-std::string StubInst::str() {
+ShorttermstorageInst::~ShorttermstorageInst() {}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+std::string ShorttermstorageInst::str() {
   return Institution::str();
 }
 
 // WARNING! Do not change the following this function!!! This enables your
 // archetype to be dynamically loaded and any alterations will cause your
 // archetype to fail.
-extern "C" cyclus::Agent* ConstructStubInst(cyclus::Context* ctx) {
-  return new StubInst(ctx);
+extern "C" cyclus::Agent* ConstructShorttermstorageInst(cyclus::Context* ctx) {
+  return new ShorttermstorageInst(ctx);
 }
